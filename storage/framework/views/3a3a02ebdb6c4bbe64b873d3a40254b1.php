@@ -1,0 +1,1 @@
+<?php /**PATH /Users/nugihiday/Documents/Workspace/sph/resources/views/test.blade.php ENDPATH**/ ?>
