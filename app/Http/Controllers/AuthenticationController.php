@@ -25,6 +25,7 @@ class AuthenticationController extends Controller
      */
     public function login(Request $request): RedirectResponse
     {
+        // dd($request->only('email', 'password'));
         if (auth()->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
 

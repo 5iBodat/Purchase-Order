@@ -30,7 +30,7 @@
 				<div class="sidebar-header position-relative">
 					<div class="d-flex justify-content-between align-items-center">
 						<div class="logo">
-							<a href="{{ route('dashboard') }}">Wangkas</a>
+							<a href="{{ route('dashboard') }}">{{ config('app.name') }}</a>
 						</div>
 						<div class="theme-toggle d-flex gap-2 align-items-center mt-2">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -77,13 +77,68 @@
 						</li>
 
 						<li class="sidebar-title"><i class="bi bi-menu-button-wide"></i></li>
+						<!-- Menu Baru untuk Mina Maret mulai dari sini -->
+						<li class="sidebar-item {{ request()->routeIs('sph.*') ? 'active' : '' }}">
+							<a href="{{ route('sph.index') }}" class="sidebar-link">
+								<i class="bi bi-receipt-cutoff"></i>
+								<span>Surat Penawaran</span>
+							</a>
+						</li>
+						<li class="sidebar-item {{ request()->routeIs('purchase-order.*') ? 'active' : '' }}">
+							<a href="{{ route('purchase-order.index') }}" class="sidebar-link">
+								<i class="bi bi-file-earmark-medical"></i>
+								<span>Penerimaan PO</span>
+							</a>
+						</li>
 
+						<li class="sidebar-item {{ request()->routeIs('po-transporter.*') ? 'active' : '' }}">
+							<a href="{{ route('po-transport.index') }}" class="sidebar-link">
+								<i class="bi bi-truck"></i>
+								<span>PO Transporter</span>
+							</a>
+						</li>
+						<li class="sidebar-item {{ request()->routeIs('settings.*') ? 'active' : '' }}">
+							<a href="{{ route('settings.index') }}" class="sidebar-link">
+								<i class="bi bi-gear-wide-connected"></i>
+								<span>Settings</span>
+							</a>
+						</li>
+						<li class="sidebar-item {{ request()->routeIs('supplier.*') ? 'active' : '' }}">
+							<a href="{{ route('supplier.index') }}" class="sidebar-link">
+								<i class="bi bi-journal-bookmark-fill"></i>
+								<span>Data Supplier</span>
+							</a>
+						</li>
+
+						<li class="sidebar-item {{ request()->routeIs('customer.*') ? 'active' : '' }}">
+							<a href="{{ route('customer.index') }}" class="sidebar-link">
+								<i class="bi bi-people-fill"></i>
+								<span>Master Customer</span>
+							</a>
+						</li>
+
+						<li class="sidebar-item {{ request()->routeIs('item.*') ? 'active' : '' }}">
+							<a href="{{ route('item.index') }}" class="sidebar-link">
+								<i class="bi bi-boxes"></i>
+								<span>Items / Produk</span>
+							</a>
+						</li>
+
+						<li class="sidebar-item {{ request()->routeIs('oatlokasi.*') ? 'active' : '' }}">
+							<a href="{{ route('oatlokasi.index') }}" class="sidebar-link">
+								<i class="bi bi-truck"></i>
+								<span>Config OAT Lokasi</span>
+							</a>
+						</li>
+
+						<!-- Menu Baru untuk Mina Maret sampai sini -->
 						<li class="sidebar-item {{ request()->routeIs('students.*') ? 'active' : '' }}">
 							<a href="{{ route('students.index') }}" class="sidebar-link">
 								<i class="bi bi-people-fill"></i>
 								<span>Pelajar</span>
 							</a>
 						</li>
+
 						<li class="sidebar-item {{ request()->routeIs('school-classes.*') ? 'active' : '' }}">
 							<a href="{{ route('school-classes.index') }}" class="sidebar-link">
 								<i class="bi bi-bookmark-fill"></i>
@@ -154,13 +209,13 @@
 			<footer>
 				<div class="footer clearfix mb-0 text-muted">
 					<div class="float-start">
-						<p>2023 &copy; Mazer</p>
+						<p>2024 &copy; DigitalByNap</p>
 					</div>
 					<div class="float-end">
 						<p>
 							Crafted with
 							<span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-							by <a href="https://saugi.me">Saugi</a>
+							for <a href="">Mina Maret Energi</a>
 						</p>
 					</div>
 				</div>
@@ -180,6 +235,7 @@
 	<script src="{{ asset('compiled/js/app.js') }}"></script>
 	<script src="{{ asset('extensions/sweetalert2/sweetalert2.min.js') }}"></script>
 	<script src="{{ asset('extensions/select2/select2.min.js') }}"></script>
+	<script src="{{ asset('extensions/moment/moment.js') }}"></script>
 
 	<script>
 		$(function () {

@@ -24,6 +24,14 @@ class DatabaseSeeder extends Seeder
             SchoolMajorSeeder::class,
             StudentSeeder::class,
             CashTransactionSeeder::class,
+            SettingsTableSeeder::class,
+            SupplierTableSeeder::class,
+            ItemTableSeeder::class,
+            OatLokasiTableSeeder::class,
+            SphTableSeeder::class,
+            PoRec::class,
+            PoVendor::class,
+            PoDetails::class,
         ]);
     }
 }
